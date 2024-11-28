@@ -13,7 +13,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
+            background-color: #f8fafc;
         }
         .container {
             text-align: center;
@@ -25,7 +25,8 @@
             width: 100%;
         }
         h1 {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            color: #333;
         }
         form {
             display: flex;
@@ -40,7 +41,7 @@
         }
         button {
             padding: 10px;
-            background-color: #007bff;
+            background-color: #28a745;
             color: white;
             border: none;
             border-radius: 5px;
@@ -48,22 +49,13 @@
             font-size: 16px;
         }
         button:hover {
-            background-color: #0056b3;
-        }
-        .success-message {
-            color: #28a745;
-            margin-top: 10px;
-        }
-        .error-message {
-            color: #dc3545;
-            margin-top: 10px;
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Zapisz się do Newslettera</h1>
-        <p>Podaj swój e-mail, aby otrzymywać najnowsze wiadomości i aktualizacje!</p>
         <form action="https://formspree.io/f/xkgnqyqk" method="POST">
             <input type="email" name="email" placeholder="Wpisz swój e-mail" required>
             <button type="submit">Zapisz się</button>
