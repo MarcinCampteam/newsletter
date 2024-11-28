@@ -6,116 +6,85 @@
     <title>Newsletter</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8fafc;
+            font-family: Arial, sans-serif;
+            background-color: transparent;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
         .newsletter-container {
-            width: 80%; /* Element zajmuje 80% szerokości */
-            max-width: 800px; /* Maksymalna szerokość dla dużych ekranów */
+            max-width: 800px;
+            width: 100%;
             background-color: white;
-            padding: 20px;
+            padding: 15px;
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
         }
-        .newsletter-form {
+        .newsletter-container h1 {
+            font-size: 1.5em;
             text-align: center;
-        }
-        .newsletter-form h1 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
+            margin: 0 0 15px;
             color: #333;
         }
-        .newsletter-form input[type="email"] {
+        .newsletter-container form {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .newsletter-container input[type="email"] {
             width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
+            padding: 12px;
+            font-size: 14px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            font-size: 16px;
             box-sizing: border-box;
         }
-        .checkbox-container {
+        .newsletter-container .checkbox-container {
             text-align: left;
-            margin-bottom: 15px;
             font-size: 14px;
         }
-        .checkbox-container input[type="checkbox"] {
+        .newsletter-container .checkbox-container input[type="checkbox"] {
             margin-right: 8px;
         }
-        .checkbox-container a {
+        .newsletter-container .checkbox-container a {
             color: #007bff;
             text-decoration: none;
         }
-        .checkbox-container a:hover {
+        .newsletter-container .checkbox-container a:hover {
             text-decoration: underline;
         }
-        .newsletter-form button {
+        .newsletter-container button {
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             background-color: #28a745;
             color: white;
             border: none;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 14px;
             cursor: pointer;
         }
-        .newsletter-form button:hover {
+        .newsletter-container button:hover {
             background-color: #218838;
-        }
-
-        /* Stylizacja dla małych ekranów */
-        @media (max-width: 768px) {
-            .newsletter-container {
-                width: 95%; /* Zajmuje więcej szerokości na węższych ekranach */
-            }
-            .newsletter-form h1 {
-                font-size: 1.5em; /* Mniejszy rozmiar tekstu nagłówka */
-            }
-            .newsletter-form input[type="email"] {
-                font-size: 14px; /* Mniejszy tekst w polu */
-                padding: 12px; /* Dopasowanie paddingu */
-            }
-            .checkbox-container {
-                font-size: 12px; /* Mniejszy tekst w checkboxie */
-            }
-            .newsletter-form button {
-                font-size: 14px; /* Mniejszy tekst w przycisku */
-                padding: 12px; /* Dopasowanie paddingu */
-            }
         }
     </style>
 </head>
 <body>
     <div class="newsletter-container">
-        <div class="newsletter-form">
-            <h1>Zapisz się do Newslettera</h1>
-            <form action="https://formspree.io/f/xkgnqyqk" method="POST" onsubmit="return validateForm()">
-                <input type="email" name="email" placeholder="Wpisz swój e-mail" required>
-                <div class="checkbox-container">
-                    <input type="checkbox" id="privacyPolicy" required>
-                    <label for="privacyPolicy">Przechodząc dalej, akceptujesz <a href="polityka-prywatnosci.html" target="_blank">politykę prywatności</a>.</label>
-                </div>
-                <button type="submit">Zapisz się</button>
-            </form>
-        </div>
+        <h1>Zapisz się do Newslettera</h1>
+        <form action="https://formspree.io/f/xkgnqyqk" method="POST">
+            <input type="email" name="email" placeholder="Wpisz swój e-mail" required>
+            <div class="checkbox-container">
+                <input type="checkbox" id="privacyPolicy" required>
+                <label for="privacyPolicy">Przechodząc dalej, akceptujesz <a href="polityka-prywatnosci.html" target="_blank">politykę prywatności</a>.</label>
+            </div>
+            <button type="submit">Zapisz się</button>
+        </form>
     </div>
-    <script>
-        function validateForm() {
-            const checkbox = document.getElementById('privacyPolicy');
-            if (!checkbox.checked) {
-                alert('Musisz zaakceptować politykę prywatności, aby kontynuować.');
-                return false;
-            }
-            return true;
-        }
-    </script>
 </body>
 </html>
