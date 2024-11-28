@@ -12,13 +12,14 @@
             background-color: #f8fafc;
         }
         .newsletter-container {
-            width: 35%; /* Zmniejszenie szerokości o 15% (z 50% do 35%) */
+            width: 35%; /* Podstawowa szerokość */
             background-color: white;
-            padding: 9.5px; /* Zmniejszenie wysokości o 5% */
+            padding: 9.5px; /* Podstawowa wysokość */
             border-top: 1px solid #ddd;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin: 20px auto; /* Wyśrodkowanie na stronie */
+            margin: 20px auto; /* Wyśrodkowanie */
             border-radius: 8px;
+            box-sizing: border-box; /* Upewnia się, że padding nie wykracza poza szerokość */
         }
         .newsletter-form {
             text-align: center;
@@ -26,22 +27,22 @@
         .newsletter-form h1 {
             margin-bottom: 10px;
             color: #333;
-            font-size: 1.5em; /* Zmniejszony rozmiar nagłówka */
+            font-size: 1.5em;
         }
         .newsletter-form input[type="email"] {
-            width: calc(100% - 20px); /* Wyśrodkowanie z odjęciem marginesów */
-            max-width: 400px; /* Ograniczenie maksymalnej szerokości pola */
+            width: calc(100% - 20px); /* Wyśrodkowanie i responsywność */
+            max-width: 400px; /* Maksymalna szerokość pola */
             padding: 7px;
-            margin: 0 auto 10px auto; /* Wyśrodkowanie i odstęp dolny */
-            display: block; /* Aby ramka była traktowana jak blok */
+            margin: 0 auto 10px auto;
+            display: block; /* Wyświetlanie jako blok */
             border: 1px solid #ddd;
             border-radius: 5px;
-            font-size: 14px; /* Zmniejszony rozmiar tekstu */
+            font-size: 14px;
         }
         .checkbox-container {
             text-align: left;
             margin-bottom: 10px;
-            font-size: 12px; /* Zmniejszony rozmiar tekstu */
+            font-size: 12px;
         }
         .checkbox-container input[type="checkbox"] {
             margin-right: 8px;
@@ -54,17 +55,35 @@
             text-decoration: underline;
         }
         .newsletter-form button {
-            width: 100%;
-            padding: 10px; /* Zmniejszona wysokość przycisku */
+            width: 100%; /* Przycisk na całą szerokość */
+            padding: 10px;
             background-color: #28a745;
             color: white;
             border: none;
             border-radius: 5px;
-            font-size: 14px; /* Zmniejszony rozmiar tekstu */
+            font-size: 14px;
             cursor: pointer;
         }
         .newsletter-form button:hover {
             background-color: #218838;
+        }
+
+        /* Stylizacja dla małych ekranów */
+        @media (max-width: 768px) {
+            .newsletter-container {
+                width: 90%; /* Dopasowanie do szerokości ekranu */
+                padding: 10px; /* Dopasowanie paddingu */
+            }
+            .newsletter-form h1 {
+                font-size: 1.2em; /* Mniejszy tekst nagłówka */
+            }
+            .newsletter-form input[type="email"] {
+                font-size: 13px; /* Mniejszy tekst w polu */
+            }
+            .newsletter-form button {
+                font-size: 13px; /* Mniejszy tekst w przycisku */
+                padding: 8px; /* Zmniejszenie wysokości przycisku */
+            }
         }
     </style>
 </head>
